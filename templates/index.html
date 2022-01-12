@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head %} 
+<title>Bot</title>
+{% endblock %}
+
+{% block body %} 
+<h1>Sebby Bot</h1>
+<p>First Name, Last Name, Email</p>
+<form action="/" method="POST">
+  <input type="text" name="First">
+  <input type="text" name="Last">
+  <input type="text" name="Mail">
+  <input type="submit"> 
+</form>
+
+{% endblock %}
