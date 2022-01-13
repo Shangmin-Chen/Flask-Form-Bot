@@ -20,6 +20,4 @@ def run_api():
     if status == "OPEN":
     # open/ true return 0
       return 0, reason, vdate
-    else:
-      # school not in session, pass
-      pass
+

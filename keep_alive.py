@@ -20,12 +20,12 @@ def my_form_post():
       data = [fname, lname, email]
       database.append(data)
       db["database"] = database
-      return "done"
+      return "You are added to the database! See you at 6 tomorrow :)"
     else:
       database = []
-      data = [fname, lname, email]
+      data = [[fname, lname, email]]
       db["database"] = data
-      return "init done"
+      return "You're the first!"
 
 
 def run():
