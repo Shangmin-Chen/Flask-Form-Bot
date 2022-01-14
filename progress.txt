@@ -1,0 +1,13 @@
+progress list: 
+---
+change how threads work, split into 15's when list is greater than 15
+
+done (jan12) omg that took so long... 
+---
+jan 13 (my birthday btw)
+fixed an argument bug in keep_alive.py 
+changed up css
+
+sent data from keep_alive.py to success.html and make user name to be shown on the success webpage.
+
+added a bunch of invalid inputs, and a delete button

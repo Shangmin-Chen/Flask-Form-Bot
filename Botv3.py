@@ -49,7 +49,7 @@ def execute(data_list):
   print("b={}".format(b))
   
   if a < 1:
-    insert(data_list)
+    insert(data_list, 0)
 
   elif a > b:
     b += 1

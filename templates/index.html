@@ -1,16 +1,23 @@
 {% extends "base.html" %}
 {% block head %} 
-<title>Bot</title>
+<title>Sebby</title>
 {% endblock %}
 
 {% block body %} 
-<h1>Sebby Bot</h1>
+<h1>Hi! I'm Sebby!</h1>
+<h4>Sebby is an automatic NYCDOE healthscreener bot that runs at 6AM on school days!</h4>
 <p>First Name, Last Name, Email</p>
 <form action="/" method="POST">
   <input type="text" name="First">
   <input type="text" name="Last">
   <input type="text" name="Mail">
+  <input list="yn" name="yesno">
+  <datalist id="yn" name="yesno">
+    <option value="Create new">
+    <option value="Delete">
+  </datalist>
   <input type="submit"> 
+  <!-- <input type="submit" value="Delete"> -->
 </form>
 
 {% endblock %}
