@@ -11,3 +11,6 @@ changed up css
 sent data from keep_alive.py to success.html and make user name to be shown on the success webpage.
 
 added a bunch of invalid inputs, and a delete button
+---
+jan 14
+restyled the website, added check boxes for delete and create, selection more false inputs.

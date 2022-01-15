@@ -6,18 +6,45 @@
 {% block body %} 
 <h1>Hi! I'm Sebby!</h1>
 <h4>Sebby is an automatic NYCDOE healthscreener bot that runs at 6AM on school days!</h4>
-<p>First Name, Last Name, Email</p>
+
 <form action="/" method="POST">
-  <input type="text" name="First">
-  <input type="text" name="Last">
-  <input type="text" name="Mail">
-  <input list="yn" name="yesno">
-  <datalist id="yn" name="yesno">
-    <option value="Create new">
-    <option value="Delete">
-  </datalist>
+  <table>
+    <tr>
+      <td>
+        <label class="desc">First Name:</label>
+      </td>
+      <td>
+        <input type="text" name="First">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label class="desc">Last Name:</label>
+      </td>
+      <td>
+        <input type="text" name="Last">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label class="desc">Email:</label>
+        <td>
+          <input type="text" name="Mail">
+        </td>
+      </td>
+    </tr>
+  </table>
+
+  <div class="add_pad">
+    <label>Create</label>
+    <input type="checkbox" name="Create" value="create" checked>
+    
+    <label>Delete</label>
+    <input type="checkbox" name="Delete" value="delete">
+  </div>
+
   <input type="submit"> 
-  <!-- <input type="submit" value="Delete"> -->
+  
 </form>
 
 {% endblock %}
