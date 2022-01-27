@@ -20,18 +20,38 @@ async def loop():
   cool_down = 0
   
   while True:
-    database = db["database"]
-    value, reason, vdate = api.run_api()
     if check_six() == 0:
       # it's 6
       if cool_down == 0:
         # init run
         value, reason, vdate = api.run_api()
+        database = db["database"]
+
+        if value == 1:
+          # 1 and 1 means that theres a connection error, and the solution is to try to reconnect again 3 more times in 60 second intervals.
+          for i in range(3):
+            await asyncio.sleep(60)
+            value, reason, vdate = api.run_api()
+            if value == 0:
+              # if it connected then break the loop
+              print("connected")
+              break
+
         if value == 0:
           Botv3.execute(database)
           print("Running... Today's date is {}.".format(vdate))
           # make it go on cooldown
           cool_down = 1
+
+        elif value == 1 and reason == 1:
+          # this is an api down error
+          print("connection error")
+          exit()
+
+        elif value == 1 and reason == 2:
+          # this is an api down error
+          print("404 error")
+          exit()
 
     if cool_down == 0:
       # ready
