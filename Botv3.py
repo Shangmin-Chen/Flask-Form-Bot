@@ -48,7 +48,7 @@ def execute(data_list):
   b = length // 15
   print("b={}".format(b))
   
-  if a < 1:
+  if a <= 1:
     insert(data_list, 0)
 
   elif a > b:

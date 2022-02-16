@@ -25,7 +25,10 @@ async def loop():
       if cool_down == 0:
         # init run
         value, reason, vdate = api.run_api()
-        database = db["database"]
+        try:
+          database = db["database"]
+        except Exception as e:
+          print(e)
 
         if value == 1:
           # 1 and 1 means that theres a connection error, and the solution is to try to reconnect again 3 more times in 60 second intervals.
@@ -38,7 +41,10 @@ async def loop():
               break
 
         if value == 0:
-          Botv3.execute(database)
+          try:
+            Botv3.execute(database)
+          except Exception as e:
+            print(e)
           print("Running... Today's date is {}.".format(vdate))
           # make it go on cooldown
           cool_down = 1
