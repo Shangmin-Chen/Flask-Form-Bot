@@ -25,6 +25,7 @@ async def loop():
       if cool_down == 0:
         # init run
         value, reason, vdate = api.run_api()
+
         try:
           database = db["database"]
         except Exception as e:
@@ -45,10 +46,13 @@ async def loop():
             Botv3.execute(database)
           except Exception as e:
             print(e)
-          print("Running... Today's date is {}.".format(vdate))
+          print("Running... Today's date is {}, {}.".format(vdate, reason))
           # make it go on cooldown
           cool_down = 1
 
+        elif value == 2: # school closed
+          print("School closed... Today's date is {}, {}.".format(vdate, reason))
+        
         elif value == 1 and reason == 1:
           # this is an api down error
           print("connection error")
