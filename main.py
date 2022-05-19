@@ -5,7 +5,9 @@ from checking_time import check_six
 import api
 import Botv3
 
-print(str(db["database"]))
+for i in range(len(db["database"])):
+  print(str(i+1), db["database"][i][0], db["database"][i][1])
+  
 # this loop will be async
 async def loop():
   # this segment is to see if theres nothing in database, wait until someone posts something into the database.
